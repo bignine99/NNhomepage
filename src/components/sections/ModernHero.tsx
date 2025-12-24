@@ -1,10 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Zap, Database, Brain } from "lucide-react";
 import Link from "next/link";
+import { MatrixRain } from "@/components/effects/MatrixRain";
 
 export function ModernHero() {
     return (
         <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-20">
+            {/* Matrix Rain Effect */}
+            <MatrixRain />
+            
             {/* Advanced Background Effects */}
             <div className="absolute inset-0 -z-10">
                 {/* Animated Gradient Orbs */}
