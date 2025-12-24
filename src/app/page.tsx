@@ -1,7 +1,7 @@
 import { ModernHero } from '@/components/sections/ModernHero';
 import { GlassCard } from '@/components/ui/glass-card';
 import Link from 'next/link';
-import { ArrowRight, Building2, BrainCircuit, MessageSquareText, HelpCircle } from 'lucide-react';
+import { ArrowRight, Building2, BrainCircuit, MessageSquareText, HelpCircle, BookOpen } from 'lucide-react';
 
 export default function Home() {
     const navigationPreviews = [
@@ -10,21 +10,29 @@ export default function Home() {
             description: 'CUBE 온톨로지와 RAG 오케스트레이션을 운영하는 팀을 소개합니다.',
             href: '/about',
             icon: Building2,
-            colSpan: 'md:col-span-2',
+            colSpan: '',
         },
         {
             title: '솔루션',
             description: '전문가형 AI Agent 포트폴리오와 PoC 사례를 확인하세요.',
             href: '/solutions',
             icon: BrainCircuit,
-            colSpan: 'md:col-span-1',
+            colSpan: '',
+        },
+        {
+            title: '지식 E-book',
+            description: '건설 데이터와 AI 기술의 미래를 담은 종합 가이드북을 만나보세요.',
+            href: 'https://ninetynine-knowldege-boo-k.vercel.app/',
+            icon: BookOpen,
+            colSpan: '',
+            external: true,
         },
         {
             title: 'FAQ',
             description: '도입부터 운영까지 자주 묻는 질문을 정리했습니다.',
             href: '/faq',
             icon: HelpCircle,
-            colSpan: 'md:col-span-1',
+            colSpan: '',
         },
         {
             title: '문의하기',
@@ -46,12 +54,13 @@ export default function Home() {
                         <h2 className="text-3xl font-bold text-foreground font-headline">Discover Our Intelligence</h2>
                     </div>
 
-                    <div className="grid gap-6 md:grid-cols-3">
+                    <div className="grid gap-6 md:grid-cols-4">
                         {navigationPreviews.map((item) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
                                 className={item.colSpan}
+                                {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
                             >
                                 <GlassCard className="h-full flex flex-col justify-between group relative overflow-hidden">
                                     <div className="absolute top-0 right-0 p-6 opacity-10 transition-transform group-hover:scale-110 group-hover:opacity-20">
