@@ -1,5 +1,6 @@
 import { ModernHero } from '@/components/sections/ModernHero';
 import { GlassCard } from '@/components/ui/glass-card';
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { ArrowRight, Building2, BrainCircuit, MessageSquareText, HelpCircle, BookOpen } from 'lucide-react';
 
@@ -47,39 +48,69 @@ export default function Home() {
         <div className="space-y-24 pb-20">
             <ModernHero />
 
-            <section className="container relative z-10">
-                <div className="mx-auto max-w-5xl space-y-12">
-                    <div className="text-center space-y-4">
-                        <p className="text-xs uppercase tracking-[0.35em] text-primary font-semibold">Explore</p>
-                        <h2 className="text-3xl font-bold text-foreground font-headline">Discover Our Intelligence</h2>
+            <section className="container relative z-10 py-24">
+                <div className="mx-auto max-w-7xl space-y-16">
+                    <div className="text-center space-y-6">
+                        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-muted-foreground backdrop-blur-xl">
+                            <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+                            <span className="font-medium">Explore Our Services</span>
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+                            Discover Our <span className="text-gradient-cyber">Intelligence</span>
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            AI 기반 건설 빅데이터 플랫폼의 모든 것을 탐색하세요
+                        </p>
                     </div>
 
-                    <div className="grid gap-6 md:grid-cols-4">
-                        {navigationPreviews.map((item) => (
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                        {navigationPreviews.map((item, index) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className={item.colSpan}
+                                className={cn("group", item.colSpan)}
                                 {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
                             >
-                                <GlassCard className="h-full flex flex-col justify-between group relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 p-6 opacity-10 transition-transform group-hover:scale-110 group-hover:opacity-20">
-                                        <item.icon className="h-24 w-24" />
+                                <GlassCard 
+                                    className="h-full flex flex-col justify-between relative overflow-hidden"
+                                    glowColor={index % 3 === 0 ? 'primary' : index % 3 === 1 ? 'secondary' : 'accent'}
+                                >
+                                    {/* Background Icon */}
+                                    <div className="absolute top-4 right-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
+                                        <item.icon className="h-32 w-32" />
                                     </div>
 
-                                    <div className="space-y-4 relative z-10">
-                                        <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                                            <item.icon className="h-6 w-6" />
+                                    {/* Content */}
+                                    <div className="space-y-4">
+                                        <div className={cn(
+                                            "inline-flex h-14 w-14 items-center justify-center rounded-2xl transition-all duration-300",
+                                            "bg-gradient-to-br from-white/10 to-white/5",
+                                            "group-hover:scale-110 group-hover:shadow-lg",
+                                            index % 3 === 0 && "group-hover:shadow-primary/50",
+                                            index % 3 === 1 && "group-hover:shadow-secondary/50",
+                                            index % 3 === 2 && "group-hover:shadow-accent/50",
+                                        )}>
+                                            <item.icon className={cn(
+                                                "h-7 w-7",
+                                                index % 3 === 0 && "text-primary",
+                                                index % 3 === 1 && "text-secondary",
+                                                index % 3 === 2 && "text-accent",
+                                            )} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-                                            <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+                                            <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                                                {item.title}
+                                            </h3>
+                                            <p className="text-sm text-muted-foreground leading-relaxed">
+                                                {item.description}
+                                            </p>
                                         </div>
                                     </div>
 
-                                    <div className="mt-6 flex items-center text-sm text-primary font-medium">
+                                    {/* CTA */}
+                                    <div className="mt-6 flex items-center text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
                                         <span>자세히 보기</span>
-                                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2" />
                                     </div>
                                 </GlassCard>
                             </Link>

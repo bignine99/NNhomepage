@@ -271,17 +271,38 @@ export async function sendContactEmail(data: ContactEmailPayload): Promise<Conta
 
 2. **서버 재시작 및 캐시 클리어링**
    - **증상**: 코드 수정 후 변경사항이 브라우저에 반영되지 않음
-   - **해결**: 
+   - **해결**:
      - 기존 서버 프로세스 종료 (PID: 33040, 31172)
      - `.next` 빌드 캐시 폴더 삭제
      - 프로젝트 재빌드 (`npm run build`)
      - 프로덕션 서버 재시작 (`npm start`)
 
+3. **메인페이지에 지식 E-book 추가**
+   - **요청사항**: 회사 소개 E-book을 메인페이지에 표시
+   - **해결**: 네비게이션 프리뷰 섹션에 E-book 카드 추가
+   - **구현 내용**:
+     - BookOpen 아이콘 추가
+     - 외부 링크 (https://ninetynine-knowldege-boo-k.vercel.app/) 연결
+     - 새 탭에서 열리도록 설정 (target="_blank", rel="noopener noreferrer")
+     - 그리드 레이아웃 조정 (4열 → 5개 카드)
+   - **적용 코드**:
+     ```typescript
+     {
+         title: '지식 E-book',
+         description: '건설 데이터와 AI 기술의 미래를 담은 종합 가이드북을 만나보세요.',
+         href: 'https://ninetynine-knowldege-boo-k.vercel.app/',
+         icon: BookOpen,
+         external: true,
+     }
+     ```
+
 #### 최종 결과
 - ✅ **웹페이지 정상 작동**: http://localhost:3001/에서 정상 접근 가능
 - ✅ **헤더 메뉴 한국어 표시**: 모든 네비게이션 링크가 한국어로 표시됨
 - ✅ **모든 페이지 라우팅 정상**: 홈, 회사소개, 솔루션, FAQ, 문의 페이지 모두 접근 가능
-- ✅ **서버 안정성**: 포트 3001에서 프로덕션 서버가 안정적으로 실행 중 (PID: 33816)
+- ✅ **지식 E-book 링크 추가**: 메인페이지 네비게이션에 E-book 카드 표시
+- ✅ **외부 링크 보안**: 새 탭에서 안전하게 열림
+- ✅ **서버 안정성**: 포트 3001에서 프로덕션 서버가 안정적으로 실행 중
 
 ---
 
