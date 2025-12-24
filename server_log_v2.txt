@@ -1,0 +1,29 @@
+  ▲ Next.js 14.2.16
+  - Local:        http://localhost:3002
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ○ Compiling / ...
+ ✓ Compiled / in 3.9s (602 modules)
+ GET / 200 in 4334ms
+ ✓ Compiled in 432ms (302 modules)
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../typescript/lib/typescript' in c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build for build dependencies doesn't lead to expected result 'C:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\typescript\lib\typescript.js', but to 'c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\typescript\lib\typescript.js' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../typescript/lib/typescript (expected C:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\typescript\lib\typescript.js)
+<w>  at file dependencies c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\load-jsconfig.js
+<w>  at file c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\load-jsconfig.js
+<w>  at file dependencies c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\webpack-config.js
+<w>  at file c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\webpack-config.js
+<w>  at file dependencies c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../typescript/lib/typescript' in c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build for build dependencies doesn't lead to expected result 'C:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\typescript\lib\typescript.js', but to 'c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\typescript\lib\typescript.js' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../typescript/lib/typescript (expected C:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\typescript\lib\typescript.js)
+<w>  at file dependencies c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\load-jsconfig.js
+<w>  at file c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\load-jsconfig.js
+<w>  at file dependencies c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\webpack-config.js
+<w>  at file c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\webpack-config.js
+<w>  at file dependencies c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs c:\Users\cho\Desktop\Temp\05 Code\251123_NNHomepage\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+ GET / 200 in 31ms
