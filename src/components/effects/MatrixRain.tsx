@@ -78,8 +78,7 @@ export function MatrixRain() {
     return (
         <canvas
             ref={canvasRef}
-            className="fixed inset-0 pointer-events-none opacity-20"
-            style={{ zIndex: 1 }}
+            className="fixed inset-0 pointer-events-none opacity-20 -z-10"
         />
     );
 }
