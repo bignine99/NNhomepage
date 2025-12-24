@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { ContactSection } from '@/components/sections/ContactSection';
+import { MatrixRain } from '@/components/effects/MatrixRain';
 
 export const metadata: Metadata = {
     title: 'Contact | Ninetynine AI Consulting',
@@ -7,7 +8,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     return (
-        <div className="space-y-16">
+        <div className="relative space-y-16">
+            <MatrixRain />
             <ContactSection />
         </div>
     );

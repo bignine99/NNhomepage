@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { AboutUsSection } from '@/components/sections/AboutUsSection';
 import { StatsSection } from '@/components/sections/StatsSection';
+import { MatrixRain } from '@/components/effects/MatrixRain';
 
 export const metadata: Metadata = {
     title: 'About | Ninetynine AI Construction Intelligence',
@@ -10,7 +11,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <div className="space-y-16 pb-20">
+        <div className="relative space-y-16 pb-20">
+            <MatrixRain />
             <AboutUsSection />
             <StatsSection />
             <section className="container">
